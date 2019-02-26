@@ -7,14 +7,17 @@ sidebar: true
 
 # Documentation
 
-Docz was built around a lot of programming concepts, techniques, tools, and with performance in mind to deliver a explicit project architecture. So, since we are thinking big and we can build something that will be really useful for you, we also think that you can learn and improve even more your process to write your documentation and create tools that can help other people too.
+> One stop shop to document the your react components.
 
-## Architecture
+## Extract react types mono repo
 
-We took a long time to find out a model that enabled us to achieve all of our goals and build something maintainable and consistent. A simple model to be scalable, easy to understand and maintain. So, after a few tries, we came to this architecture:
+Packages:
 
-![](https://cdn-std.dprcdn.net/files/acc_649651/HRLnp6)
+1. [extract-react-types](/documentation/extract-react-types) _Extract Flow & TypeScript types from React Components_
+2. [extract-react-types-loader](/documentation/extract-react-types-loader) _Webpack loader for extract-react-types_
+3. [kind2string](/documentation/kind-2-string) _kind2string is designed to take the data structures outputted by extract-react-types and convert it down to a (useful) string._
+4. [pretty-proptypes](/documentation/pretty-proptypes) _PrettyPropTypes is designed to display the output of extract-react-types. It is designed to read the output from extract-react-types, and display rich prop information for consumers._
 
-Essentially, you have a **bundler** that will get information of your **project configuration** and **plugins**, parse your entries using MDX and setup your theme with this configuration and data.
+## Contribute
 
-In the next sections we'll explain a bit more about how docz works and how you can customize your documentation even more and create your own plugins and themes!
+Pull requests, issues and comments welcome

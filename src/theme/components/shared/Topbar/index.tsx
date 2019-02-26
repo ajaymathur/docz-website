@@ -9,7 +9,7 @@ const Wrapper = styled('div')`
   position: relative;
   height: 60px;
   width: 100%;
-  background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+  background-image: linear-gradient(270deg, #6738ff, #c3ffbf);
   z-index: 99;
 
   ${Container.toString()} {
@@ -93,11 +93,8 @@ export const Topbar = () => (
                   {doc.name}
                 </MenuLink>
               ))}
-              <IconLink href="https://medium.com/doczoficial" target="_blank">
-                Blog
-              </IconLink>
               <IconLink
-                href="https://github.com/pedronauck/docz"
+                href="https://github.com/atlassian/extract-react-types"
                 target="_blank"
               >
                 <Github width={30} />

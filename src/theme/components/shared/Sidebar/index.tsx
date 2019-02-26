@@ -1,5 +1,3 @@
-import './ads'
-
 import * as React from 'react'
 import { Component, Fragment, SFC } from 'react'
 import { Docs, Entry, DocsRenderProps, Link as BaseLink } from 'docz'
@@ -227,26 +225,6 @@ export const isActive = (route: string) => (match: any, location: any) =>
   (location.pathname.startsWith(route) && route !== '/')
 
 export class Sidebar extends Component<SidebarProps> {
-  public addCarbonAds = () => {
-    const wrapper = document.getElementById('ads')
-    const script = document.createElement('script')
-
-    script.setAttribute('async', '')
-    script.setAttribute('type', 'text/javascript')
-    script.setAttribute(
-      'src',
-      '//cdn.carbonads.com/carbon.js?serve=CK7D6237&placement=wwwdoczsite'
-    )
-    script.setAttribute('id', '_carbonads_js')
-
-    if (wrapper) {
-      wrapper.appendChild(script)
-    }
-  }
-
-  public componentDidMount(): void {
-    this.addCarbonAds()
-  }
 
   public render(): React.ReactNode {
     const { active, parent } = this.props
@@ -295,7 +273,6 @@ export class Sidebar extends Component<SidebarProps> {
                   {docs.map(doc => (
                     <Menu key={doc.id} doc={doc} active={active} handleSidebarToggle={handleSidebarToggle} />
                   ))}
-                  <div id="ads" />
                 </Wrapper>
               </SidebarWrapper>
               <ToggleBackground opened={on} onClick={handleSidebarToggle} />

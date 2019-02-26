@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react';
-import CodeMirror from 'react-codemirror';
-import 'codemirror/lib/codemirror.css';
-import PrettyProps from 'pretty-proptypes';
-import ert from 'extract-react-types';
-import './App.css';
-import * as uriUtils from './uriUtils';
+import React, { Component, Fragment } from 'react'
+import CodeMirror from 'react-codemirror'
+import 'codemirror/lib/codemirror.css'
+import PrettyProps from 'pretty-proptypes'
+import ert from 'extract-react-types'
+import './App.css'
+import * as uriUtils from './uriUtils'
 
 const STARTING_CODE = {
   code: `type ButtonPropType = {
@@ -15,8 +15,8 @@ const STARTING_CODE = {
 class Button extends React.Component<ButtonPropType>{
 
 }`,
-  typeSystem: 'flow'
-};
+  typeSystem: 'flow',
+}
 
 class App extends Component {
   state = {
@@ -26,40 +26,39 @@ class App extends Component {
         : STARTING_CODE.code,
     dataForPropTypes: ert(STARTING_CODE.code, STARTING_CODE.typeSystem),
     typeSystem: STARTING_CODE.typeSystem,
-    error: null
-  };
+    error: null,
+  }
 
   updateCode = code => {
     try {
-      const ast = ert(code, this.state.typeSystem);
+      const ast = ert(code, this.state.typeSystem)
       this.setState({
         dataForPropTypes: ast,
-        error: null
-      });
-      uriUtils.updateQuery({ code: uriUtils.compress(code) });
+        error: null,
+      })
+      uriUtils.updateQuery({ code: uriUtils.compress(code) })
     } catch (error) {
       this.setState({
-        error
-      });
-      window.error = error;
+        error,
+      })
+      window.error = error
     }
-  };
+  }
 
   handleSelectChange = event => {
     this.setState(
       {
-        typeSystem: event.target.value
+        typeSystem: event.target.value,
       },
       () => this.updateCode(this.state.code)
-    );
-  };
+    )
+  }
 
   render() {
-    const { code, dataForPropTypes, error } = this.state;
+    const { code, dataForPropTypes, error } = this.state
     return (
       <Fragment>
         <div className="side-bar">
-          <h1>Pretty proptypes</h1>
           <div className="header-controls">
             <label>
               Type system:
@@ -80,13 +79,15 @@ class App extends Component {
             />
           </div>
           <div className="block proptypes">
-            {dataForPropTypes && <PrettyProps className="block" props={dataForPropTypes} />}
+            {dataForPropTypes && (
+              <PrettyProps className="block" props={dataForPropTypes} />
+            )}
           </div>
         </div>
         {error && <pre className="error-container">{error.stack}</pre>}
       </Fragment>
-    );
+    )
   }
 }
 
-export default App;
+export default App

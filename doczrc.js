@@ -6,16 +6,12 @@ const SRC = path.resolve(__dirname, 'src')
 
 export default {
   src: './docs',
-  title: 'Docz',
-  description: 'It has never been so easy to document your things',
+  title: 'Extract React Types',
   indexHtml: 'src/index.html',
   theme: 'src/theme/index',
   ordering: 'ascending',
   propsParser: false,
   mdPlugins: [externalLinks.default],
-  htmlContext: {
-    favicon: '/public/favicon.ico',
-  },
   modifyBundlerConfig: config => {
     config.module.rules.push({
       test: /(babel-file-loader)/,

@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 110px);
 }
 
 .container .block {
@@ -18,8 +18,8 @@
 }
 
 .side-bar {
-  background: linear-gradient(270deg, #6738ff, #c3ffbf);
-  color: #6554c0;
+  background: #545454;
+  color: white;
   padding: 15px;
   display: flex;
   align-items: center;

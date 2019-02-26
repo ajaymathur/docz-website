@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { SFC } from 'react'
 
-import logo from '@images/logo.svg'
+import logo from '@images/logo.png'
 
 export interface LogoProps {
   width?: number
