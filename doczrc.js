@@ -17,6 +17,14 @@ export default {
     favicon: '/public/favicon.ico',
   },
   modifyBundlerConfig: config => {
+    config.module.rules.push({
+      test: /(babel-file-loader)/,
+      use: 'null-loader',
+    })
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    })
     config.resolve.alias = Object.assign({}, config.resolve.alias, {
       '@fonts': `${PUBLIC}/fonts`,
       '@images': `${PUBLIC}/images`,

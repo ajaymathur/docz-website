@@ -8,4 +8,4 @@ export interface LogoProps {
   height?: number
 }
 
-export const Logo: SFC<LogoProps> = props => <img {...props} src={logo} />
+export const Logo: SFC<LogoProps> = props => <img src={logo} {...props}  />
